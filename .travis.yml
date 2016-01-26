@@ -2,10 +2,7 @@ language: ruby
 rvm:
   - 2.2.4
 
-install:
-  - gem install lyp
-
-script: lyp compile test/assert_test.ly # lyp -v # test --install --env
+script: bundle exec lyp compile --install --env test/assert_test.ly
 
 cache:
   bundler: true
@@ -14,4 +11,4 @@ cache:
     
 env:
   - LILYPOND_VERSION=2.18.2
-  - LILYPOND_VERSION=2.19.35
+#  - LILYPOND_VERSION=2.19.35
