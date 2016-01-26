@@ -5,7 +5,7 @@ rvm:
 install:
   - gem install lyp
 
-script: lyp -v #test -i -e
+script: lyp compile test/assert_test.ly # lyp -v # test --install --env
 
 cache:
   bundler: true
