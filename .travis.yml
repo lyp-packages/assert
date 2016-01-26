@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - 2.2.4
+
+install:
+  - gem install lyp
+
+script: lyp -v #test -i -e
+
+cache:
+  bundler: true
+  directories:
+    - $HOME/.lyp
+    
+env:
+  - LILYPOND_VERSION=2.18.2
+  - LILYPOND_VERSION=2.19.35
