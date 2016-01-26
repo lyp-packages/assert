@@ -32,3 +32,7 @@
 (define assert> (assert-equivalent > ">"))
 (define assert<= (assert-equivalent <= "<="))
 (define assert>= (assert-equivalent >= ">="))
+
+(define (assert-summary)
+  (display (format "\n~a assertion(s) passed!" assert-count))
+)
