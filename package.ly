@@ -1,1 +1,1 @@
-#(load "./assert.scm")
+#(pload "./assert.scm")
