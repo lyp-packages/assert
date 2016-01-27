@@ -5,16 +5,15 @@
 
 (define (assert:fail message) (throw 'assert:failure "assert:fail" message #f))
 
-(define (assert:proc message proc) (begin
-  (set! assert:count (+ 1 assert:count))
-  (if (proc) 'ok (assert:fail message))
-))
+(define (assert:proc message proc)
+  (if (proc) (set! assert:count (+ 1 assert:count)) (assert:fail message))
+)
 
-(define (assert:compare-fn predicate . opt-pred-name)
+(define (assert:compare-fn predicate . expected-got)
   (define (fail-message message expected actual)
-    (if (null? opt-pred-name)
+    (if (null? expected-got)
+      (format "expected ~a to ~a ~a" expected (procedure-name predicate) actual)
       (format "expected ~a but got ~a" expected actual)
-      (format "expected ~a to ~a ~a" expected (car opt-pred-name) actual)
     )
   )
   (lambda (expected actual . opt-message)
@@ -25,15 +24,16 @@
 )
 
 (define (assert expr) (assert:proc "assertion failed" (lambda () expr)))
-(define assert:compare (assert:compare-fn equal?))
-(define assert:eq? (assert:compare-fn eq? "eq?"))
-(define assert:eqv? (assert:compare-fn eqv? "eqv?"))
-(define assert:equal? (assert:compare-fn equal? "equal?"))
-(define assert= (assert:compare-fn = "="))
-(define assert< (assert:compare-fn < "<"))
-(define assert> (assert:compare-fn > ">"))
-(define assert<= (assert:compare-fn <= "<="))
-(define assert>= (assert:compare-fn >= ">="))
+(define assert:compare (assert:compare-fn equal? #t))
+(define assert:eq? (assert:compare-fn eq?))
+(define assert:eqv? (assert:compare-fn eqv?))
+(define assert:equal? (assert:compare-fn equal?))
+(define assert= (assert:compare-fn =))
+(define assert< (assert:compare-fn <))
+(define assert> (assert:compare-fn >))
+(define assert<= (assert:compare-fn <=))
+(define assert>= (assert:compare-fn >=))
+(define assert:string=? (assert:compare-fn string=?))
 
 (define (assert:throw proc) (let* ((error-thrown #f))
   (catch #t
