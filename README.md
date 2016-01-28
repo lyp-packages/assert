@@ -68,7 +68,7 @@ lyp-assert also serves as an example of how to integrate testing into your build
 
 ```ruby
 source "http://rubygems.org"
-gem "lyp", ">= 0.2.0"
+gem "lyp", ">=0.2.1"
 ```
 
 Then run `bundle install` to install the lyp package and generate the `Gemfile.lock` file. Both `Gemfile` and `Gemfile.lock` should be checked in.
