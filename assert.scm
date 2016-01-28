@@ -10,7 +10,7 @@
 )
 
 (define (assert:compare-fn predicate . expected-got)
-  (define (fail-message message expected actual)
+  (define (fail-message message actual expected)
     (if (null? expected-got)
       (format "expected ~a to ~a ~a" expected (procedure-name predicate) actual)
       (format "expected ~a but got ~a" expected actual)
