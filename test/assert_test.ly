@@ -1,5 +1,5 @@
 \version "2.18.2"
-\include "../package.ly"
+\require "assert:.."
 
 % When an assertion fails it throws an error
 % Here we catch the error and set the error-thrown flag
