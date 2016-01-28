@@ -1,1 +1,1 @@
-#(pload "./assert.scm")
+#(lyp:load "assert.scm")
