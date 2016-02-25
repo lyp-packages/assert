@@ -76,8 +76,8 @@ Then run `bundle install` to install the lyp package and generate the `Gemfile.l
 You can also test your package locally by running:
 
 ```bash
-lyp install lilypond@2.18.2 # first install lilypond
-lyp test .
+$ lyp install lilypond@2.18.2 # first install lilypond
+$ lyp test .
 ```
 
 - The `.travis.yml` configures the build process:
