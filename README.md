@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/noteflakes/lyp-assert.svg?branch=master)](https://travis-ci.org/noteflakes/lyp-assert)
 
-# lyp-assert - assertions for lilypond packages
+# assert: Assertions for Lilypond packages
 
 This package provides assert functionality for [lyp](https://github.com/noteflakes/lyp) packages, in order to facilitate unit-testing lilypond and scheme code.
 
