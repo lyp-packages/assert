@@ -51,7 +51,3 @@
     (assert:string=? (list-ref params 1) "expected 1 but got 2")
   )
 )
-
-
-% Display number of assertions passed
-#(assert:summary)
