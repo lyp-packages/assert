@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/noteflakes/lyp-assert.svg?branch=master)](https://travis-ci.org/noteflakes/lyp-assert)
+[![Build Status](https://travis-ci.org/lyp-packages/assert.svg?branch=master)](https://travis-ci.org/lyp-packages/assert)
 
 # assert: Assertions for Lilypond packages
 
@@ -68,7 +68,7 @@ lyp-assert also serves as an example of how to integrate testing into your build
 
 ```ruby
 source "http://rubygems.org"
-gem "lyp", ">=0.2.1"
+gem "lyp", ">=1.2.0"
 ```
 
 Then run `bundle install` to install the lyp package and generate the `Gemfile.lock` file. Both `Gemfile` and `Gemfile.lock` should be checked in.
