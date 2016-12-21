@@ -1,2 +1,2 @@
 source "http://rubygems.org"
-gem "lyp", ">=1.2.0"
+gem "lyp", ">=1.2.1"
